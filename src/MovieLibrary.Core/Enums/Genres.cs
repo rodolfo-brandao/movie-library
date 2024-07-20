@@ -7,12 +7,14 @@ namespace MovieLibrary.Core.Enums;
 public enum Genres : ushort
 {
     Action = 1,
-    Comedy = 2,
-    Drama = 4,
-    Fantasy = 8,
-    Horror = 16,
-    Mystery = 32,
-    Romance = 64,
-    Thriller = 128,
-    Western = 256
+    Animation = 2,
+    Comedy = 4,
+    Drama = 8,
+    Fantasy = 16,
+    Horror = 23,
+    Mystery = 64,
+    Romance = 128,
+    Thriller = 256,
+    War = 512,
+    Western = 1024
 }
