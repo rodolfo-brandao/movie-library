@@ -6,15 +6,17 @@ namespace MovieLibrary.Core.Models;
 public class Movie : TrackableEntity
 {
     public virtual Guid DirectorId { get; protected internal set; }
-    public virtual string Name { get; protected internal set; }
+    public virtual Guid CountryId { get; protected internal set; }
+    public virtual string EnglishName { get; protected internal set; }
+    public virtual string OriginalName { get; protected internal set; }
     public virtual string ReleaseYear { get; protected internal set; }
-    public virtual Genres Genres { get; protected internal set; }
-    public virtual string CountryName { get; protected internal set; }
     public virtual ushort RuntimeInMinutes { get; protected internal set; }
+    public virtual Genres Genres { get; protected internal set; }
 
     #region Navigation Properties
 
     public virtual Director Director { get; protected internal set; }
+    public virtual Country Country { get; protected internal set; }
 
     #endregion
 
@@ -24,9 +26,21 @@ public class Movie : TrackableEntity
         return this;
     }
 
-    public virtual Movie ChangeName(string name)
+    public virtual Movie ChangeCountry(Guid countryId)
     {
-        Name = name;
+        CountryId = countryId;
+        return this;
+    }
+
+    public virtual Movie ChangeEnglishName(string englishName)
+    {
+        EnglishName = englishName;
+        return this;
+    }
+
+    public virtual Movie ChangeOriginalName(string originalName)
+    {
+        OriginalName = originalName;
         return this;
     }
 
@@ -36,21 +50,15 @@ public class Movie : TrackableEntity
         return this;
     }
 
-    public virtual Movie ChangeCategories(Genres genres)
-    {
-        Genres = genres;
-        return this;
-    }
-
-    public virtual Movie ChangeCountryName(string countryName)
-    {
-        CountryName = countryName;
-        return this;
-    }
-
     public virtual Movie ChangeRuntime(ushort runtimeInMinutes)
     {
         RuntimeInMinutes = runtimeInMinutes;
+        return this;
+    }
+
+    public virtual Movie ChangeGenres(Genres genres)
+    {
+        Genres = genres;
         return this;
     }
 
