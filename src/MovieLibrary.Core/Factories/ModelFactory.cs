@@ -6,28 +6,36 @@ namespace MovieLibrary.Core.Factories;
 
 public sealed class ModelFactory : IModelFactory
 {
-    public Country CreateCountry(string name, string isoAlpha3Code) => new()
+    public Country CreateCountry(string name, string isoAlpha3Code)
     {
-        Id = Guid.NewGuid(),
-        Name = name,
-        IsoAlpha3Code = isoAlpha3Code,
-        CreatedOn = DateTime.UtcNow,
-        UpdatedOn = default,
-        IsDisabled = default
-    };
+        return new Country
+        {
+            Id = Guid.NewGuid(),
+            Name = name,
+            IsoAlpha3Code = isoAlpha3Code,
+            CreatedOn = DateTime.UtcNow,
+            UpdatedOn = default,
+            IsDisabled = default
+        };
+    }
 
-    public Director CreateDirector(string name, DateOnly dateOfBirth) => new()
+    public Director CreateDirector(string name, DateOnly dateOfBirth)
     {
-        Id = Guid.NewGuid(),
-        Name = name,
-        DateOfBirth = dateOfBirth,
-        CreatedOn = DateTime.UtcNow,
-        UpdatedOn = default,
-        IsDisabled = default
-    };
+        return new Director
+        {
+            Id = Guid.NewGuid(),
+            Name = name,
+            DateOfBirth = dateOfBirth,
+            CreatedOn = DateTime.UtcNow,
+            UpdatedOn = default,
+            IsDisabled = default
+        };
+    }
 
     public Movie CreateMovie(Guid directorId, Guid countryId, string englishName, string originalNane,
-        string releaseYear, ushort runtimeInMinutes, Genres genres) => new()
+        string releaseYear, ushort runtimeInMinutes, Genres genres)
+    {
+        return new Movie
         {
             Id = Guid.NewGuid(),
             DirectorId = directorId,
@@ -41,17 +49,21 @@ public sealed class ModelFactory : IModelFactory
             UpdatedOn = default,
             IsDisabled = default
         };
+    }
 
-    public User CreateUser(string username, string email, string password, string passwordSalt, string role) => new()
+    public User CreateUser(string username, string email, string password, string passwordSalt, string role)
     {
-        Id = Guid.NewGuid(),
-        Username = username,
-        Email = email,
-        Password = password,
-        PasswordSalt = passwordSalt,
-        Role = role,
-        CreatedOn = DateTime.UtcNow,
-        UpdatedOn = default,
-        IsDisabled = default
-    };
+        return new User
+        {
+            Id = Guid.NewGuid(),
+            Username = username,
+            Email = email,
+            Password = password,
+            PasswordSalt = passwordSalt,
+            Role = role,
+            CreatedOn = DateTime.UtcNow,
+            UpdatedOn = default,
+            IsDisabled = default
+        };
+    }
 }
