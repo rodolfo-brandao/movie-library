@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieLibrary.Core", "MovieL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieLibrary.Data", "MovieLibrary.Data\MovieLibrary.Data.csproj", "{7EBC6913-BB9A-4BCE-9C36-070A2AFF0B06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieLibrary.Presentation", "MovieLibrary.Presentation\MovieLibrary.Presentation.csproj", "{BDF46101-472F-4409-ADDE-6BEB5E84FEE1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieLibrary.Application", "MovieLibrary.Application\MovieLibrary.Application.csproj", "{C433465B-FA80-4422-9FFF-C01A50735665}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{7EBC6913-BB9A-4BCE-9C36-070A2AFF0B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EBC6913-BB9A-4BCE-9C36-070A2AFF0B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EBC6913-BB9A-4BCE-9C36-070A2AFF0B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF46101-472F-4409-ADDE-6BEB5E84FEE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF46101-472F-4409-ADDE-6BEB5E84FEE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF46101-472F-4409-ADDE-6BEB5E84FEE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF46101-472F-4409-ADDE-6BEB5E84FEE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C433465B-FA80-4422-9FFF-C01A50735665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C433465B-FA80-4422-9FFF-C01A50735665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C433465B-FA80-4422-9FFF-C01A50735665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C433465B-FA80-4422-9FFF-C01A50735665}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
