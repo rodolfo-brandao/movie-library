@@ -5,8 +5,8 @@ CREATE TABLE "user" (
     "password" CHAR(32) NOT NULL,
     password_salt CHAR(24) NOT NULL,
     "role" VARCHAR(5) NOT NULL,
-    created_on TIMESTAMP NOT NULL,
-    updated_on TIMESTAMP NULL,
+    created_on TIMESTAMPTZ NOT NULL,
+    updated_on TIMESTAMPTZ NULL,
     is_disabled BOOLEAN NOT NULL
 );
 
@@ -14,8 +14,8 @@ CREATE TABLE country (
     id UUID NOT NULL PRIMARY KEY,
     "name" VARCHAR(255) UNIQUE,
     iso_alpha3_code VARCHAR(4) UNIQUE NOT NULL,
-    created_on TIMESTAMP NOT NULL,
-    updated_on TIMESTAMP NULL,
+    created_on TIMESTAMPTZ NOT NULL,
+    updated_on TIMESTAMPTZ NULL,
     is_disabled BOOLEAN NOT NULL
 );
 
@@ -24,8 +24,8 @@ CREATE TABLE director (
     country_id UUID NOT NULL,
     "name" VARCHAR(255) UNIQUE NOT NULL,
     date_of_birth DATE NOT NULL,
-    created_on TIMESTAMP NOT NULL,
-    updated_on TIMESTAMP NULL,
+    created_on TIMESTAMPTZ NOT NULL,
+    updated_on TIMESTAMPTZ NULL,
     is_disabled BOOLEAN NOT NULL,
 
     CONSTRAINT FK_country_director
@@ -42,8 +42,8 @@ CREATE TABLE movie (
     release_year CHAR(4) NOT NULL,
     runtime_in_minutes SMALLINT NOT NULL,
     genres SMALLINT NOT NULL,
-    created_on TIMESTAMP NOT NULL,
-    updated_on TIMESTAMP NULL,
+    created_on TIMESTAMPTZ NOT NULL,
+    updated_on TIMESTAMPTZ NULL,
     is_disabled BOOLEAN NOT NULL,
 
     CONSTRAINT FK_director_movie
