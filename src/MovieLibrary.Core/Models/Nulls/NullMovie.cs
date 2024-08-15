@@ -2,6 +2,6 @@ using MovieLibrary.Core.Models.Abstract;
 
 namespace MovieLibrary.Core.Models.Nulls;
 
-public sealed class NullMovie : INullObject<Movie>
+public sealed class NullMovie : Movie, INullObject
 {
 }

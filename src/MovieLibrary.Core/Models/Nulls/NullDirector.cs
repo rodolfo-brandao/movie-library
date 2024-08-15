@@ -2,6 +2,6 @@ using MovieLibrary.Core.Models.Abstract;
 
 namespace MovieLibrary.Core.Models.Nulls;
 
-public sealed class NullDirector : INullObject<Director>
+public sealed class NullDirector : Director, INullObject
 {
 }
