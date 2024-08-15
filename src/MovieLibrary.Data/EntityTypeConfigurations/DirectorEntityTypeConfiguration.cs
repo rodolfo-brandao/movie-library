@@ -14,12 +14,12 @@ public class DirectorEntityTypeConfiguration : IEntityTypeConfiguration<Director
 
         builder.Property(director => director.Id)
             .HasColumnName("id")
-            .HasColumnType("UNIQUEIDENTIFIER")
+            .HasColumnType("UUID")
             .IsRequired();
 
         builder.Property(director => director.CountryId)
             .HasColumnName("country_id")
-            .HasColumnType("UNIQUEIDENTIFIER")
+            .HasColumnType("UUID")
             .IsRequired();
 
         builder.Property(director => director.Name)
@@ -34,17 +34,17 @@ public class DirectorEntityTypeConfiguration : IEntityTypeConfiguration<Director
 
         builder.Property(director => director.CreatedOn)
             .HasColumnName("created_on")
-            .HasColumnType("DATETIME2")
+            .HasColumnType("TIMESTAMPTZ")
             .IsRequired();
 
         builder.Property(director => director.UpdatedOn)
             .HasColumnName("updated_on")
-            .HasColumnType("DATETIME2")
+            .HasColumnType("TIMESTAMPTZ")
             .IsRequired(required: default);
 
         builder.Property(director => director.IsDisabled)
             .HasColumnName("is_disabled")
-            .HasColumnType("BIT")
+            .HasColumnType("BOOLEAN")
             .IsRequired();
 
         #region Navigation Properties Cardinality

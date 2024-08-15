@@ -14,7 +14,7 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(user => user.Id)
             .HasColumnName("id")
-            .HasColumnType("UNIQUEIDENTIFIER")
+            .HasColumnType("UUID")
             .IsRequired();
 
         builder.Property(user => user.Username)
@@ -33,7 +33,7 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
             .IsRequired();
 
         builder.Property(user => user.PasswordSalt)
-            .HasColumnName("password")
+            .HasColumnName("password_salt")
             .HasColumnType("CHAR(16)")
             .IsRequired();
 
@@ -44,17 +44,17 @@ public class UserEntityTypeConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(user => user.CreatedOn)
             .HasColumnName("created_on")
-            .HasColumnType("DATETIME2")
+            .HasColumnType("TIMESTAMPTZ")
             .IsRequired();
 
         builder.Property(user => user.UpdatedOn)
             .HasColumnName("updated_on")
-            .HasColumnType("DATETIME2")
+            .HasColumnType("TIMESTAMPTZ")
             .IsRequired(required: default);
 
         builder.Property(user => user.IsDisabled)
             .HasColumnName("is_disabled")
-            .HasColumnType("BIT")
+            .HasColumnType("BOOLEAN")
             .IsRequired();
     }
 }

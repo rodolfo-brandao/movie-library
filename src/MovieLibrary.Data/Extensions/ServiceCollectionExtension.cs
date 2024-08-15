@@ -4,10 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MovieLibrary.Core.Contracts.Factories;
 using MovieLibrary.Core.Contracts.Repositories;
+using MovieLibrary.Core.Contracts.Services;
 using MovieLibrary.Core.Contracts.Units;
 using MovieLibrary.Core.Factories;
 using MovieLibrary.Data.DbContexts;
 using MovieLibrary.Data.Repositories;
+using MovieLibrary.Data.Services;
 using MovieLibrary.Data.Units;
 
 namespace MovieLibrary.Data.Extensions;
@@ -20,7 +22,7 @@ public static class ServiceCollectionExtension
         var connectionString = configuration.GetConnectionString(name: connectionStringKey);
         return serviceCollection.AddDbContext<MovieLibraryDbContext>(options =>
         {
-            options.UseSqlite(connectionString);
+            options.UseNpgsql(connectionString);
         });
     }
 
@@ -37,6 +39,11 @@ public static class ServiceCollectionExtension
             .AddScoped<IDirectorRepository, DirectorRepository>()
             .AddScoped<IMovieRepository, MovieRepository>()
             .AddScoped<IUserRepository, UserRepository>();
+    }
+
+    public static IServiceCollection AddCustomServices(this IServiceCollection serviceCollection)
+    {
+        return serviceCollection.AddScoped<ISecurityService, SecurityService>();
     }
 
     public static IServiceCollection AddCustomUnitsOfWork(this IServiceCollection serviceCollection)

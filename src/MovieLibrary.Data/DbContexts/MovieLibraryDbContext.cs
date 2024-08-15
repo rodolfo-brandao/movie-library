@@ -16,6 +16,7 @@ public sealed class MovieLibraryDbContext : DbContext
     public MovieLibraryDbContext(DbContextOptions<MovieLibraryDbContext> options) : base(options)
     {
         ChangeTracker.LazyLoadingEnabled = default;
+        AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", isEnabled: true);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
