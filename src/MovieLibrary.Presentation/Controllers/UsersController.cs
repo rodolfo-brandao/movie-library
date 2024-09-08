@@ -25,7 +25,7 @@ public class UsersController(IMediator mediator) : ApiResultController
     public async Task<IActionResult> CreateUserAsync([FromBody] CreateUserCommand command,
         CancellationToken cancellationToken)
     {
-        return BuildResponse(await mediator.Send(command, cancellationToken));
+        return BuildStatusCodeObject(await mediator.Send(command, cancellationToken));
     }
 
     /// <summary>
@@ -42,6 +42,6 @@ public class UsersController(IMediator mediator) : ApiResultController
     public async Task<IActionResult> IssueJsonWebTokenAsync([FromBody] AuthorizeUserCommand command,
         CancellationToken cancellationToken)
     {
-        return BuildResponse(await mediator.Send(command, cancellationToken));
+        return BuildStatusCodeObject(await mediator.Send(command, cancellationToken));
     }
 }

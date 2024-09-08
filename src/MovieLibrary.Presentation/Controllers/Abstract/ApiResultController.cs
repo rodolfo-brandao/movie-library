@@ -12,7 +12,7 @@ public abstract class ApiResultController : ControllerBase
     /// Builds the proper status code object based on the <see cref="ApiResult{TResponse}"/>.
     /// </summary>
     /// <typeparam name="TResponse">The type of the response.</typeparam>
-    protected IActionResult BuildResponse<TResponse>(ApiResult<TResponse> apiResult)
+    protected IActionResult BuildStatusCodeObject<TResponse>(ApiResult<TResponse> apiResult)
     {
         return apiResult.StatusCode switch
         {
