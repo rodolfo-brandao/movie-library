@@ -400,3 +400,6 @@ FodyWeavers.xsd
 
 # macOS files
 *.DS_Store
+
+# Visual Studio WebAPI project files
+appsettings.Development.json
